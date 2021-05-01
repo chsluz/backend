@@ -9,6 +9,10 @@ const {
 } = require("./service/customerService");
 const routes = express.Router();
 
+routes.get("/", async (req, res) => {
+  res.json({message: 'Status OK'});
+});
+
 routes.get("/customers", async (req, res) => {
   let customers = await listCustomer();
   res.json(customers);
